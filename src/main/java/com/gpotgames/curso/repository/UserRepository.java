@@ -9,4 +9,6 @@ import com.gpotgames.curso.domain.User;
 public interface UserRepository extends MongoRepository<User, String> {
 
 	
+
+	
 }
