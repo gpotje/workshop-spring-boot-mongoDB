@@ -1,12 +1,15 @@
 package com.gpotgames.curso.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.gpotgames.curso.dto.AuthorDTO;
+import com.gpotgames.curso.dto.CommentDTO;
 
 @Document
 public class Post implements Serializable {
@@ -19,6 +22,16 @@ public class Post implements Serializable {
 	private String body;
 	private AuthorDTO autor;
 	
+	private List<CommentDTO> comment = new ArrayList<>();
+	
+	public List<CommentDTO> getComment() {
+		return comment;
+	}
+
+	public void setComment(List<CommentDTO> comment) {
+		this.comment = comment;
+	}
+
 	public Post() {}
 	
 	public Post(String id, Date date2, String title, String body,AuthorDTO autor) {
